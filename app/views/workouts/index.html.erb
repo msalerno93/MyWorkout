@@ -1,0 +1,9 @@
+<h1> Welcome to Workout Page - Index </h1>
+
+<%= @workouts.each do |w| %>
+    <ul>
+        <li> Title: <%= w.title %> </li>
+        <li> muscle: <%= w.muscle %> </li>
+    </ul>
+
+<% end %>
