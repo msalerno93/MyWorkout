@@ -1,0 +1,14 @@
+<%= form_for @workout do |w| %>
+    <div>
+        <%= w.label :title %>
+        <%= w.text_field :title %>
+    </div>
+
+    <div>
+        <%= w.label :muscle %>
+        <%= w.text_field :muscle %>
+    </div>
+
+    <%= w.submit "Edit Workout" %>
+
+    <% end %>

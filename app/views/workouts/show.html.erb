@@ -1,0 +1,9 @@
+<h1> Information about Workout - Showpage </h1>
+
+<h2> Exercise: <%= @workout.title %> </h2>
+<h2> Muscle: <%= @workout.muscle %> </h2>
+
+
+<%= link_to "Edit Workout", edit_workout_path(@workout) %> 
+<br>
+<%= link_to "Delete Workout", workout_path(@workout), method: "delete" %> 
