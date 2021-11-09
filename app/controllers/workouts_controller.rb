@@ -19,7 +19,7 @@ class WorkoutsController < ApplicationController
         if @workout.save
             redirect_to workouts_path
         else
-            @error = @workout.errors.full_messages[0]
+            @errors = @workout.errors.full_messages
             render :new
         end
     end
@@ -31,7 +31,7 @@ class WorkoutsController < ApplicationController
         if @workout.update(workout_params)
             redirect_to workouts_path
         else
-            @error = @workout.errors.full_messages[0]
+            @error = @workout.errors.full_messages
             render :edit
         end
     end
