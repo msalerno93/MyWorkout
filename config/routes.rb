@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   resources :workouts
   resources :users
   get "/login", to: "users#login", as: "login"
+  get "/new", to: "users#new", as: "new"
   
   
   # get 'users/show'
   # get 'users/new'
+  # post 'users/new'
   # get 'users/create'
   # get 'users/edit'
   # get 'users/update'
