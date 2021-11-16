@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username])
+    @user = User.find_by(user_params)
     byebug
     if !@user
       @error = "Username is incorrect"
       render :new
-    elsif !@user.authenticate(params [:user][:password_digest])
+    elsif !@user.authenticate(params[:user][:password_digest])
       @error = "Password is Incorrect"
       render :new
     else
