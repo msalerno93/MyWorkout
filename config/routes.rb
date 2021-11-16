@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'static#home'
   resources :workouts
-  # get "/login", to: "users#login", as: "login"
+  resources :users
+  get "/login", to: "users#login", as: "login"
   
   
   # get 'users/show'

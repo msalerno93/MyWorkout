@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if !@user
       @error = "Username is incorrect"
-      render :new
+      render :login
     elsif !user.authenticate(params [:password])
       @error = "Password is Incorrect"
-      render :new
+      render :login
     else
       session[:user_id] = @user.id
       redirect_to workouts_path
