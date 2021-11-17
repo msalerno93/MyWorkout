@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'static#home'
   resources :workouts
   resources :users
+  resources :sessions
   get "/login", to: "users#login", as: "login"
   get "/new", to: "users#new", as: "new"
   

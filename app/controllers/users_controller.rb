@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_by(user_params)
+    @user = User.find_by(username: params[:user][:username])
     byebug
     if !@user
       @error = "Username is incorrect"
@@ -19,14 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
-  def destroy
-  end
+  # def destroy
+  # end
 
 
   private
