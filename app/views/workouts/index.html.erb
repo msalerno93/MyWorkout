@@ -1,4 +1,4 @@
-<h1> Welcome to Workout Page - Index </h1>
+<h4> Welcome to Workout Page - Index </h4>
 <% @workouts.each do |w| %>
     
     <p> <%= link_to w.title, workout_path(w) %> </p>
@@ -6,6 +6,6 @@
 <br>
 <br>
 
-<h4> Create Workout - Click Below - Link to Create - takes to workouts/new </h4>
-
-<h4> <%= link_to "Create Workout", new_workout_path%> </h4>
+<%# <h4> Create Workout - Click Below - Link to Create - takes to workouts/new </h4> %>
+<%# 
+<h4> <%= link_to "Create Workout", new_workout_path%> 

@@ -1,11 +1,15 @@
-<h1>Sign Up</h1>
+<h1> Login</h1>
+<br>
+<% if flash[:notice] %>
+<h4><%= flash[:notice] %></h4>
+<%end%>
 <br>
 
-    <%= form_tag("/register") do %>
+    <%= form_tag("/login") do %>
         <%= label_tag "Username:" %>
         <%= text_field_tag :username %>
 
         <%= label_tag "Password:" %>
         <%= password_field_tag :password_digest %>
-        <%= submit_tag "Sign Up!" %>
+        <%= submit_tag "Login!" %>
     <% end %>
