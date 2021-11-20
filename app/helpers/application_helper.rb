@@ -14,7 +14,7 @@ module ApplicationHelper
         end
 
         def login(user)
-            session[:current_user_id] = @user.id
+            session[:current_user_id] = user.id
         end
     end
 end
