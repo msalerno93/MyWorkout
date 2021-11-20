@@ -3,7 +3,8 @@ class CreateWorkouts < ActiveRecord::Migration[6.1]
     create_table :workouts do |t|
       t.string :title
       t.string :muscle
-      # t.belongs_to :user, foreign_key: true
+      
+      t.belongs_to :user
 
       t.timestamps
     end

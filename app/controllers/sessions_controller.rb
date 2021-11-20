@@ -20,9 +20,9 @@ class SessionsController < ApplicationController
     end
     
 
-    private
+    # private
 
-    def user_params
-        params.require(:user).permit(:username, :password_digest)
-    end
+    # def user_params
+    #     params.require(:user).permit(:username, :password_digest)
+    # end
 end
