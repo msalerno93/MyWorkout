@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :workouts
   resources :users
   resources :sessions
-  get "/login", to: "users#login", as: "login"
-  get "/new", to: "users#new", as: "new"
-  
+  get "/login", to: "sessions#new", as: "login"
+  post "/login", to: "sessions#create"
+  get "/register", to: "users#new", as: "register"
+  post "register", to: "users#create"
+  get "/logout", to: "sessions#destroy"
   
   # get 'users/show'
   # get 'users/new'

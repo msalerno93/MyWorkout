@@ -1,24 +1,24 @@
 class SessionsController < ApplicationController
 
-    def signup
-        @user = User.new
+    def new
+        render :new
     end
 
     def create
-        @user = User.new(user_params)
-        if @user.save
-            session[:user_id] = @user.id
-            redirect_to workouts_path
+        @user = User.find_by(:username => params[:username])
+        if @user
+            login(@user)
+            redirect_to "/workouts"
         else
-            @error = @user.errors.full_messages
-            render :signup
+            redirect_to "/login", :notice => "Can't Locate Email"
         end
     end
 
-    def logout
-        session.clear
-        redirect_to root_path
+    def destroy
+        reset_session
+        redirect_to "/"
     end
+    
 
     private
 
@@ -26,4 +26,3 @@ class SessionsController < ApplicationController
         params.require(:user).permit(:username, :password_digest)
     end
 end
-

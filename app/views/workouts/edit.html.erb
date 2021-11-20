@@ -1,3 +1,5 @@
+<h1>Edit Your Workout</h1>
+<br>
 <% if @errors %>
     <% @errors.each do |e| %>
     <h1> <%= e %> </h1>
@@ -15,6 +17,6 @@
         <%= w.text_field :muscle %>
     </div>
 
-    <%= w.submit "Edit Workout" %>
+    <%= w.submit "Submit" %>
 
     <% end %>
