@@ -19,10 +19,10 @@ class SessionsController < ApplicationController
         redirect_to "/"
     end
     
-
-    # private
-
-    # def user_params
-    #     params.require(:user).permit(:username, :password_digest)
-    # end
 end
+
+#     private
+
+#     def user_params
+#         params.require(:username).permit(:username, :password_digest)
+#     end
