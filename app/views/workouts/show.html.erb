@@ -1,9 +1,10 @@
-<h1> Information about Workout - Showpage </h1>
-
 <h5> Exercise: <%= @workout.title %> </h5>
 <h5> Muscle: <%= @workout.muscle %> </h5>
 
-
+<%# <% if @workout.user.username logged_in %>
 <%= link_to "Edit Workout", edit_workout_path(@workout) %> 
 <br>
 <%= link_to "Delete Workout", workout_path(@workout), method: "delete" %> 
+<br>
+<br>
+Created by <%= @workout.user.username%>

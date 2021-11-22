@@ -22,12 +22,6 @@ ActiveRecord::Schema.define(version: 2021_11_20_063454) do
     t.index ["workout_id"], name: "index_comments_on_workout_id"
   end
 
-  create_table "musclegroups", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,8 +37,10 @@ ActiveRecord::Schema.define(version: 2021_11_20_063454) do
   create_table "workouts", force: :cascade do |t|
     t.string "title"
     t.string "muscle"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
 end

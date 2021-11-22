@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
-    before_action :logged_in?
+    before_action :authentication_required
 
     def index
         @workouts = Workout.all
@@ -16,7 +16,6 @@ class WorkoutsController < ApplicationController
     end
   
     def create
-        byebug
         @workout = current_user.workouts.build(workout_params)
         if @workout.save
             redirect_to workouts_path
