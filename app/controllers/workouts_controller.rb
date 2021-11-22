@@ -11,8 +11,6 @@ class WorkoutsController < ApplicationController
     end
   
     def new
-        #allows to create object so form_for knows about properties(attributes) that belong to object
-        #because this is created - form_for knows about title and muscle
         @workout = Workout.new
     end
   
@@ -45,8 +43,6 @@ class WorkoutsController < ApplicationController
     def set_workout
         @workout = Workout.find_by_id(params[:id])
     end
-
-    #strong params
 
     def workout_params
         params.require(:workout).permit(:title, :muscle)
