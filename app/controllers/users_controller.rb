@@ -28,7 +28,8 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to user_path
         else
-            redirect_to user_edit_path
+            @errors = @user.errors.full_messages
+            render :edit
         end
     end
 
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
 
     private
         def user_params
-            params.require(:user).permit(:username, :password_digest)
+            params.require(:user).permit(:username, :password)
         end
 
         def set_user
