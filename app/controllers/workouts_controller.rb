@@ -16,6 +16,13 @@ class WorkoutsController < ApplicationController
     end
   
     def create
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        # byebug
+=======
+>>>>>>> 708b6b0a372f92ccd5832091c7802c9cf8dc7ebe
+>>>>>>> msalerno93-master
         @workout = current_user.workouts.build(workout_params)
         if @workout.save
             redirect_to workouts_path
