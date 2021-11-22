@@ -5,15 +5,15 @@ Rails.application.routes.draw do
  
 
 
-  resources :users , only: [:edit, :update, :show, :destroy ] do 
+  resources :users do 
     resources :workouts, only: [:new, :create, :edit, :show]
   end
 
   resources :workouts, only: [ :update , :index, :destroy]
 
   
-  get "/register", to: "users#new", as: "register"
-  post "register", to: "users#create"
+  # get "/register", to: "users#new", as: "register"
+  # post "register", to: "users#create"
 
  
   post "/login", to: "sessions#create"

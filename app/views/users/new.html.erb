@@ -1,16 +1,1 @@
-<h1> Sign Up!</h1>
-<br>
-<% if @errors %>
-    <% @errors.each do |e| %>
-    <h6> <%= e %> </h6>
-    <%end%>
-<%end%>
-<br>
-    <%= form_for @user, url: "/register" do |t|%><br>
-        <%= t.label "Username:" %><br>
-        <%= t.text_field :username %><br>
-
-        <%= t.label "Password:" %><br>
-        <%= t.password_field :password_digest %><br>
-        <%= t.submit "Sign Up!" %>
-    <% end %>
+<%= render partial: "users/form", locals: {user: @user, action: "Sign Up!" } %>

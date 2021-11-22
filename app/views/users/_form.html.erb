@@ -1,0 +1,16 @@
+<h1> <%= action %> </h1>
+<br>
+<% if @errors %>
+    <% @errors.each do |e| %>
+    <h6> <%= e %> </h6>
+    <%end%>
+<%end%>
+<br>
+    <%= form_for user do |t|%><br>
+        <%= t.label "Username:" %><br>
+        <%= t.text_field :username %><br>
+
+        <%= t.label "Password:" %><br>
+        <%= t.password_field :password_digest %><br>
+        <%= t.submit "Sign Up!" %>
+    <% end %>
