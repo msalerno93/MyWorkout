@@ -2,12 +2,9 @@ class WorkoutsController < ApplicationController
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
     before_action :authentication_required
 
-    def popular 
-
-    end
 
     def index
-        @workouts = Workout.all
+        @workouts = Workout.alpha
     end
 
     def show
