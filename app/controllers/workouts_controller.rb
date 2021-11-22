@@ -5,7 +5,6 @@ class WorkoutsController < ApplicationController
     def popular 
 
     end
-    
 
     def index
         @workouts = Workout.all

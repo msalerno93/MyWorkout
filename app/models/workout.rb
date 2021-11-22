@@ -1,8 +1,8 @@
 class Workout < ApplicationRecord
-    # belongs_to :musclegroup
     # MUSCLE = ["Chest", "Back", "Biceps", "Triceps", "Legs", "Shoulders"]
+    scope :longest_workout, -> (title) { where("LENGTH(title) > 15")}
     belongs_to :user
-
+   
     has_many :comments
     has_many :commented_users, through: :comments, source: :user
     
