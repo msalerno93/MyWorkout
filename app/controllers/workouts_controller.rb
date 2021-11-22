@@ -17,8 +17,14 @@ class WorkoutsController < ApplicationController
   
     def create
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+        # byebug
+=======
+>>>>>>> 708b6b0a372f92ccd5832091c7802c9cf8dc7ebe
+>>>>>>> msalerno93-master
+=======
         # byebug
 =======
 >>>>>>> 708b6b0a372f92ccd5832091c7802c9cf8dc7ebe
