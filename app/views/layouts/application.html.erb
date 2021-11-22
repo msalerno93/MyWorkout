@@ -18,6 +18,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+  <% if session[:current_user_id] %>
+    <nav>
+      Hello, <%= @current_user.username %> !
+    </nav>
+    <%end%>
+
   
     <%= render "static/header" %>
     <div class="container">

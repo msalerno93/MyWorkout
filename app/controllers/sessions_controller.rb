@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
             login(@user)
             redirect_to "/workouts"
         else
-            redirect_to "/login", :notice => "Can't Locate Email"
+            redirect_to "/login", :notice => "Can't Locate Username"
         end
     end
 
     def destroy
         reset_session
-        redirect_to "/"
+        redirect_to "/login"
     end
     
 end
