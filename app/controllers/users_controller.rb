@@ -11,7 +11,8 @@ class UsersController < ApplicationController
             login(@user)
             redirect_to "/workouts"
         else
-            redirect_to "/register", :notice => "Username Already Taken"
+            @errors = @user.errors.full_messages
+            render :new
         end
 
     end

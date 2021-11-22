@@ -1,14 +1,16 @@
 <h1> Sign Up!</h1>
 <br>
-<% if flash[:notice] %>
-<h6><%= flash[:notice] %></h6>
+<% if @errors %>
+    <% @errors.each do |e| %>
+    <h6> <%= e %> </h6>
+    <%end%>
 <%end%>
 <br>
-    <%= form_for @user, url: "/register" do |t|%>
-        <%= t.label "Username:" %>
-        <%= t.text_field :username %>
+    <%= form_for @user, url: "/register" do |t|%><br>
+        <%= t.label "Username:" %><br>
+        <%= t.text_field :username %><br>
 
-        <%= t.label "Password:" %>
-        <%= t.password_field :password_digest %>
+        <%= t.label "Password:" %><br>
+        <%= t.password_field :password_digest %><br>
         <%= t.submit "Sign Up!" %>
     <% end %>
