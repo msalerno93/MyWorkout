@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
   root to: 'static#home'
-  resources :workouts
-  resources :users
-  resources :sessions
-  get "/login", to: "sessions#new", as: "login"
-  post "/login", to: "sessions#create"
+
+  
+ 
+
+
+  resources :users , only: [:edit, :update, :index, :destroy ] do 
+    resources :workouts, only: [:new, :create, :edit]
+  end
+
+  resources :workouts, only: [ :update , :index, :destroy, :show]
+
+  
   get "/register", to: "users#new", as: "register"
   post "register", to: "users#create"
+
+ 
+  post "/login", to: "sessions#create"
+  get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
   
   # get 'users/show'

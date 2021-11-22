@@ -4,7 +4,7 @@
 <h6><%= flash[:notice] %></h6>
 <%end%>
 <br>
-    <%= form_for @user do |t|%>
+    <%= form_for @user, url: "/register" do |t|%>
         <%= t.label "Username:" %>
         <%= t.text_field :username %>
 

@@ -2,6 +2,11 @@ class WorkoutsController < ApplicationController
     before_action :set_workout, only: [:show, :edit, :update, :destroy]
     before_action :authentication_required
 
+    def popular 
+
+    end
+    
+
     def index
         @workouts = Workout.all
     end
@@ -16,19 +21,6 @@ class WorkoutsController < ApplicationController
     end
   
     def create
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        # byebug
-=======
->>>>>>> 708b6b0a372f92ccd5832091c7802c9cf8dc7ebe
->>>>>>> msalerno93-master
-=======
-        # byebug
-=======
->>>>>>> 708b6b0a372f92ccd5832091c7802c9cf8dc7ebe
->>>>>>> msalerno93-master
         @workout = current_user.workouts.build(workout_params)
         if @workout.save
             redirect_to workouts_path
