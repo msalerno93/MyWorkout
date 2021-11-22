@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             login(@user)
             redirect_to "/workouts"
         else
-            redirect_to "/login", :notice => "Can't Locate Username"
+            redirect_to "/login", :notice => "Can't Locate User"
         end
     end
 

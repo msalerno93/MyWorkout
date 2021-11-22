@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :users , only: [:edit, :update, :index, :destroy ] do 
-    resources :workouts, only: [:new, :create, :edit]
+    resources :workouts, only: [:new, :create, :edit, :show]
   end
 
-  resources :workouts, only: [ :update , :index, :destroy, :show]
+  resources :workouts, only: [ :update , :index, :destroy]
 
   
   get "/register", to: "users#new", as: "register"
