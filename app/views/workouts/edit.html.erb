@@ -2,7 +2,7 @@
 <br>
 <% if @errors %>
     <% @errors.each do |e| %>
-    <h1> <%= e %> </h1>
+    <h6> <%= e %> </h6>
     <%end%>
 <%end%>
 
@@ -18,5 +18,9 @@
     </div>
 
     <%= w.submit "Submit" %>
-
     <% end %>
+    <br>
+    <br>
+    Only Creator Can Edit Workout
+    <br>
+    Created by <%= @workout.user.username%>
