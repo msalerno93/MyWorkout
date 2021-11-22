@@ -1,7 +1,6 @@
 <h4> All Workouts! </h4>
-<% @workouts.each do |w| %>
-    
-    <p> <%= link_to w.title, workout_path(w) %> </p>
+<% @workouts.each do |w| %>  
+    <p> <%= link_to w.title, user_workout_path(@current_user,w) %> </p>
 <% end %>
 <br>
 <br>
