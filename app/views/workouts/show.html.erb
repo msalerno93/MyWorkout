@@ -3,8 +3,6 @@
 
 <h6> Comments: </h6>
 
-<%= link_to "Comment", new_user_workout_comment_path(@current_user, @workout) %>
-
 <ul>
   <% @workout.comments.each do |comment|%>
     <li><%= comment.user.username %> - <%= comment.text %> </li>
@@ -20,3 +18,5 @@
 <br>
 <br>
 Created by <%= @workout.user.username%>
+<br>
+<%= link_to "New Comment", new_user_workout_comment_path(@current_user, @workout) %>

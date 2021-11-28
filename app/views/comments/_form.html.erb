@@ -1,0 +1,13 @@
+   <h2> <%= action %> </h2>
+
+   <% if @errors %>
+    <% @errors.each do |e| %>
+    <h6> <%= e %> </h6>
+    <%end%>
+    <%end%>
+
+    <%= form_for comment, url: user_workout_comments_path do |t|%><br>
+        <%= t.label "Comment" %><br>
+        <%= t.text_field :text %><br>
+        <%= t.submit %>
+    <% end %>
