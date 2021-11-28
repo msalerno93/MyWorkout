@@ -4,6 +4,7 @@ class Workout < ApplicationRecord
     has_many :comments
     has_many :commented_users, through: :comments, source: :user
     
+    validates :title, uniqueness: true
     validates :title, presence: true
     validates :muscle, presence: true
 

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
 
   resources :users do 
-    resources :workouts, only: [:new, :create, :edit, :show]
+    resources :workouts, only: [:new, :create, :edit, :show] do
+      resources :comments
+    end
   end
 
   resources :workouts, only: [ :update , :index, :destroy]

@@ -1,4 +1,14 @@
 <h1>My Profile</h1>
 
+<% if @current_user.workouts.length > 0 %>
+  <h4> My Workouts! </h4>
+  <% @current_user.workouts.each do |w| %>
+      <p> <%= link_to w.title, user_workout_path(@current_user,w) %> </p>
+  <% end %>
+<% else %>
+  <h4> You have not created any workouts ! </h4>
+<% end %>
+<br>
+
 <h6><%= link_to "Change Username/Password", edit_user_path(@current_user) %></h6><br>
 <h6><%= link_to "Delete Account", user_path(@current_user), method: "delete" %></h6>

@@ -1,6 +1,17 @@
 <h5> Exercise: <%= @workout.title %> </h5>
 <h5> Muscle: <%= @workout.muscle %> </h5>
 
+<h6> Comments: </h6>
+
+<%= link_to "Comment", new_user_workout_comment_path(@current_user, @workout) %>
+
+<ul>
+  <% @workout.comments.each do |comment|%>
+    <li><%= comment.user.username %> - <%= comment.text %> </li>
+  <% end %>
+</ul>
+
+
 <% if @current_user.workouts.include? @workout %>
   <%= link_to "Edit Workout", edit_user_workout_path(@current_user, @workout) %> 
   <br>

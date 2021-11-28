@@ -22,11 +22,13 @@ class SessionsController < ApplicationController
     def omniauth
         user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
             u.username = auth['info']['first_name']
+            u.password = SecureRandom.hex(10)
         end
         if user.valid?
+            login(user)
             redirect_to "/workouts"
         else
-            redirect_to "/workouts"
+            redirect_to "/login"
         end
     end
     
