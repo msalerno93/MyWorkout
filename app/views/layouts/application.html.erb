@@ -23,14 +23,12 @@
       Hello, <%= @current_user.username %> !
     </nav>
     <%end%>
-
   
     <%= render "static/header" %>
     <div class="container">
     <br>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= button_to "Log in With Google", '/auth/google_oauth2' %>
     </div>
   
 

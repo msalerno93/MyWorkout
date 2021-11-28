@@ -5,6 +5,7 @@ class Workout < ApplicationRecord
     has_many :commented_users, through: :comments, source: :user
     
     validates :title, presence: true
+    validates :muscle, presence: true
 
 
     scope :alpha, -> {order("workouts.title ASC")}

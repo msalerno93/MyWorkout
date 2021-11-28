@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :views
   root to: 'static#home'
 
   
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
   
   # get "/register", to: "users#new", as: "register"
   # post "register", to: "users#create"
-
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
  
   post "/login", to: "sessions#create"
   get "/login", to: "sessions#new"
