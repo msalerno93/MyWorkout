@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
     before_action :set_workout
+    before_action :set_comment, only: [:edit, :update, :destroy]
 
-    def index
-    end
+    # def index
+    # end
 
     def new
         @comment = Comment.new
@@ -22,10 +23,21 @@ class CommentsController < ApplicationController
     def edit
     end
 
-    def show
+    def update
+        if @comment.update(comment_params)
+            redirect_to user_workout_path(@current_user, @workout)
+        else
+            @errors = @comment.errors.full_messages
+            render :edit
+        end
     end
 
+    # def show
+    # end
+
     def destroy
+        @comment.destroy
+        redirect_to user_workout_path(@current_user, @workout)
     end
 
 
@@ -34,6 +46,10 @@ class CommentsController < ApplicationController
 
         def set_workout
             @workout = Workout.find(params[:workout_id])
+        end
+
+        def set_comment
+            @comment = Comment.find(params[:id])
         end
 
         def comment_params
