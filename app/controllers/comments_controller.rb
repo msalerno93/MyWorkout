@@ -2,9 +2,6 @@ class CommentsController < ApplicationController
     before_action :set_workout
     before_action :set_comment, only: [:edit, :update, :destroy]
 
-    # def index
-    # end
-
     def new
         @comment = Comment.new
     end
@@ -14,7 +11,6 @@ class CommentsController < ApplicationController
         if @comment.save
             redirect_to user_workout_path(@current_user, @workout)
         else
-            # redirect_to new_user_workout_comment_path(@current_user, @workout)
             @errors = @comment.errors.full_messages
             render :new
         end
@@ -31,9 +27,6 @@ class CommentsController < ApplicationController
             render :edit
         end
     end
-
-    # def show
-    # end
 
     def destroy
         @comment.destroy

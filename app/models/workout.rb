@@ -19,13 +19,4 @@ class Workout < ApplicationRecord
     validates_with MuscleValidator
 
     scope :alpha, -> {order("workouts.title ASC")}
-    # validate :muscle_is_valid?
-
-
-    # private
-    #     def muscle_is_valid?
-    #         if self.musclegroup && !MUSCLE.include?(self.musclegroup)
-    #             self.errors.add(:musclegroup, "Must use Muscles Already Provided")
-    #         end
-    #     end
 end
