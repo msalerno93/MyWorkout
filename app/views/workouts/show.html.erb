@@ -5,7 +5,7 @@
 
 <ul>
   <% @workout.comments.each do |comment|%>
-    <li><%= comment.user.username %> - <%= comment.text %> </li>
+    <li><%= comment.user.username %> - <%= comment.text %> <%= @current_user == comment.user ? (link_to 'edit', edit_user_workout_comment_path(@current_user, @workout, comment)) : "" %></li>
   <% end %>
 </ul>
 
