@@ -1,1 +1,2 @@
 <%= render partial: "comments/form", locals: {comment: @comment, action: "Edit Comment"} %>
+<%= button_to  "Delete", user_workout_comment_path(@current_user, @workout, @comment), method: "delete" %>
