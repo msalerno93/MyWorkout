@@ -6,7 +6,7 @@
     <%end%>
     <%end%>
 
-    <%= form_for comment, url: user_workout_comments_path do |t|%><br>
+    <%= form_for [@current_user, @workout, comment]  do |t|%><br>
         <%= t.label "Comment" %><br>
         <%= t.text_field :text %><br>
         <%= t.submit %>
