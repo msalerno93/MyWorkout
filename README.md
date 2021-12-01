@@ -1,24 +1,29 @@
-# README
+# MyWorkout
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MyWorkout is a web application where users can make an exercise that others can comment on. Users can share their PR/how much weight they can do with everyone.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+First fork and clone this repository to your local machine. Once that has been done, then you can open this repo on your local machine and enter in:
 
-* System dependencies
+```bash
+$ bundle install
+```
 
-* Configuration
+This will download all the correct gems you will need to run this web application. After this you can enter the following to start the web application:
 
-* Database creation
+```bash
+$ rails s
+```
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/msalerno93/MyWorkout. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
+The gem is available as open source under the terms of the [MIT](https://choosealicense.com/licenses/mit/) License.
 
-* ...
+## Code of Conduct
+
+Everyone interacting in the MyWorkout project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the code of conduct.
