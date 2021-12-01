@@ -16,6 +16,9 @@ This will download all the correct gems you will need to run this web applicatio
 $ rails s
 ```
 
+YOU WILL NEED YOUR OWN .env FILE THAT CONTAINS YOUR SPECIFIC GOOGLE CLIENT ID AND GOOGLE CLIENT SECRET!!
+Without this information you will NOT be able to login using your Gmail account.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/msalerno93/MyWorkout. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
